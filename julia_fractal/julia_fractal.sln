@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "julia_fractal", "julia_fractal\julia_fractal.vcxproj", "{671D3E71-BDD8-47B1-89C5-7EAB25EF53AC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6ED07E6B-3953-497F-A0B6-684879FC267A} = {6ED07E6B-3953-497F-A0B6-684879FC267A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "assembly_calculations", "assembly_calculations\assembly_calculations.vcxproj", "{6ED07E6B-3953-497F-A0B6-684879FC267A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +46,18 @@ Global
 		{671D3E71-BDD8-47B1-89C5-7EAB25EF53AC}.Release|x86.ActiveCfg = Release|Win32
 		{671D3E71-BDD8-47B1-89C5-7EAB25EF53AC}.Release|x86.Build.0 = Release|Win32
 		{671D3E71-BDD8-47B1-89C5-7EAB25EF53AC}.Release|x86.Deploy.0 = Release|Win32
+		{6ED07E6B-3953-497F-A0B6-684879FC267A}.Debug|ARM.ActiveCfg = Debug|Win32
+		{6ED07E6B-3953-497F-A0B6-684879FC267A}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{6ED07E6B-3953-497F-A0B6-684879FC267A}.Debug|x64.ActiveCfg = Debug|x64
+		{6ED07E6B-3953-497F-A0B6-684879FC267A}.Debug|x64.Build.0 = Debug|x64
+		{6ED07E6B-3953-497F-A0B6-684879FC267A}.Debug|x86.ActiveCfg = Debug|Win32
+		{6ED07E6B-3953-497F-A0B6-684879FC267A}.Debug|x86.Build.0 = Debug|Win32
+		{6ED07E6B-3953-497F-A0B6-684879FC267A}.Release|ARM.ActiveCfg = Release|Win32
+		{6ED07E6B-3953-497F-A0B6-684879FC267A}.Release|ARM64.ActiveCfg = Release|Win32
+		{6ED07E6B-3953-497F-A0B6-684879FC267A}.Release|x64.ActiveCfg = Release|x64
+		{6ED07E6B-3953-497F-A0B6-684879FC267A}.Release|x64.Build.0 = Release|x64
+		{6ED07E6B-3953-497F-A0B6-684879FC267A}.Release|x86.ActiveCfg = Release|Win32
+		{6ED07E6B-3953-497F-A0B6-684879FC267A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
