@@ -8,9 +8,6 @@
       <UniqueIdentifier>07633330-ba8f-46f2-9229-8d5d8554fa36</UniqueIdentifier>
       <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
     </Filter>
-    <Filter Include="temporary_classes">
-      <UniqueIdentifier>{b4f49573-4b23-4204-85e7-72051a098f0a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Headers">
       <UniqueIdentifier>{ddd58032-b610-4433-91a3-1d9e44279cf7}</UniqueIdentifier>
     </Filter>
@@ -20,15 +17,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
-    <ClCompile Include="ComplexNumbWorker.cpp">
-      <Filter>temporary_classes</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
-    <ClInclude Include="ComplexNumbWorker.h">
-      <Filter>Headers</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LockScreenLogo.scale-200.png">

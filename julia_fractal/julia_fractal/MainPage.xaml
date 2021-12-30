@@ -23,9 +23,9 @@
         <TextBlock HorizontalAlignment="Left" Margin="651,371,0,0" Text="Real" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
         <TextBox HorizontalAlignment="Left" Margin="728,339,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="90"/>
         <TextBlock HorizontalAlignment="Left" Margin="729,371,0,0" Text="Imaginary" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="909,676,0,0" Text="Generated in:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Height="32" Width="135" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="1066,676,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Height="27" Width="48"/>
-        <TextBlock HorizontalAlignment="Left" Margin="1134,676,0,0" Text="ms" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Height="27" Width="48"/>
+        <TextBlock HorizontalAlignment="Left" Margin="881,682,0,0" Text="Generated in:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Height="32" Width="135" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1038,682,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Height="27" Width="48"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1106,682,0,0" Text="ms" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Height="27" Width="48"/>
 
     </Grid>
 </Page>
