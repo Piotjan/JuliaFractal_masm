@@ -19,13 +19,13 @@
         <TextBlock HorizontalAlignment="Left" Margin="17,259,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="253,259,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Button Content="Generate" Margin="15,316,686,0" VerticalAlignment="Top" Height="39" Width="91"
-                HorizontalAlignment="Center" FontSize="16" RenderTransformOrigin="0.504,1.437"/>
+                HorizontalAlignment="Center" FontSize="16" RenderTransformOrigin="0.504,1.437" Click="Button_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="17,150,0,0" Text="c = " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
-        <TextBox HorizontalAlignment="Left" Margin="51,150,0,0" Text="" TextWrapping="Wrap"
+        <TextBox x:Name="tbReal" HorizontalAlignment="Left" Margin="51,150,0,0" Text="" TextWrapping="Wrap"
                  VerticalAlignment="Top" Height="27" Width="90"/>
         <TextBlock HorizontalAlignment="Left" Margin="80,180,0,0" Text="Real" TextWrapping="Wrap"
                    VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.193,4.751"/>
-        <TextBox HorizontalAlignment="Left" Margin="158,150,0,0" Text="" TextWrapping="Wrap"
+        <TextBox x:Name="tbImg" HorizontalAlignment="Left" Margin="158,150,0,0" Text="" TextWrapping="Wrap"
                  VerticalAlignment="Top" Height="27" Width="90"/>
         <TextBlock HorizontalAlignment="Left" Margin="171,178,0,0" Text="Imaginary" TextWrapping="Wrap"
                    VerticalAlignment="Top" FontSize="14"/>
@@ -35,6 +35,6 @@
                    VerticalAlignment="Top" FontSize="18" Height="27" Width="48"/>
         <TextBlock HorizontalAlignment="Left" Margin="192,382,0,0" Text="ms" TextWrapping="Wrap"
                    VerticalAlignment="Top" FontSize="18" Height="27" Width="48"/>
-        <Image HorizontalAlignment="Left" Height="400" Margin="379,10,0,0" VerticalAlignment="Top" Width="400"/>
+        <Image x:Name="imFractal" HorizontalAlignment="Left" Height="400" Margin="379,10,0,0" VerticalAlignment="Top" Width="400"/>
     </Grid>
 </Window>

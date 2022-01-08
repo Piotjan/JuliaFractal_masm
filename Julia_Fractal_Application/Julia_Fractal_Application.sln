@@ -6,9 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Julia_Fractal_Application", "Julia_Fractal_Application\Julia_Fractal_Application.csproj", "{6E8A5363-4A34-4679-AB91-E01B1FA52601}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C779251B-4456-4261-BAA3-7C112316D673} = {C779251B-4456-4261-BAA3-7C112316D673}
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440} = {C33E1B23-4E6C-4F44-B1E9-175D363A7440}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MASM", "MASM\MASM.vcxproj", "{C779251B-4456-4261-BAA3-7C112316D673}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CPP", "CPP\CPP.vcxproj", "{C33E1B23-4E6C-4F44-B1E9-175D363A7440}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +61,20 @@ Global
 		{C779251B-4456-4261-BAA3-7C112316D673}.Release|x64.Build.0 = Release|x64
 		{C779251B-4456-4261-BAA3-7C112316D673}.Release|x86.ActiveCfg = Release|Win32
 		{C779251B-4456-4261-BAA3-7C112316D673}.Release|x86.Build.0 = Release|Win32
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Debug|ARM.ActiveCfg = Debug|Win32
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Debug|ARM64.ActiveCfg = Debug|Win32
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Debug|x64.ActiveCfg = Debug|x64
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Debug|x64.Build.0 = Debug|x64
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Debug|x86.ActiveCfg = Debug|Win32
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Debug|x86.Build.0 = Debug|Win32
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Release|Any CPU.ActiveCfg = Release|Win32
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Release|ARM.ActiveCfg = Release|Win32
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Release|ARM64.ActiveCfg = Release|Win32
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Release|x64.ActiveCfg = Release|x64
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Release|x64.Build.0 = Release|x64
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Release|x86.ActiveCfg = Release|Win32
+		{C33E1B23-4E6C-4F44-B1E9-175D363A7440}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
