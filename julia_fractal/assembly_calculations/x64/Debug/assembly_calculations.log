@@ -1,4 +1,0 @@
-﻿  Assembling colors_calc.asm...
-colors_calc.asm(5): warning A6004: procedure argument or local not referenced : varaible
-LINK : error LNK2001: unresolved external symbol _DllMainCRTStartup
-D:\Documents\sztudyja\Studies-projects\JuliaFractal_masm\julia_fractal\x64\Debug\assembly_calculations.dll : fatal error LNK1120: 1 unresolved externals

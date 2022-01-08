@@ -1,0 +1,40 @@
+﻿<Window x:Class="Julia_Fractal_Application.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Julia_Fractal_Application"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Text="Julia Fractal Generator"
+                   TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="331" FontSize="32"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,74,0,0" Text="Choose library:" TextWrapping="Wrap"
+                   VerticalAlignment="Top" Height="29" Width="150" FontSize="16"/>
+        <RadioButton Content="MASM" Margin="32,108,705,0" VerticalAlignment="Top"/>
+        <RadioButton Content="C++" Margin="92,108,651,0" VerticalAlignment="Top"/>
+        <Slider HorizontalAlignment="Left" Margin="32,259,0,0" VerticalAlignment="Top" Width="216" Minimum="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,225,0,0" Text="Amount of threads:" TextWrapping="Wrap"
+                   VerticalAlignment="Top" Height="29" Width="142" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="17,259,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="253,259,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button Content="Generate" Margin="15,316,686,0" VerticalAlignment="Top" Height="39" Width="91"
+                HorizontalAlignment="Center" FontSize="16" RenderTransformOrigin="0.504,1.437"/>
+        <TextBlock HorizontalAlignment="Left" Margin="17,150,0,0" Text="c = " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox HorizontalAlignment="Left" Margin="51,150,0,0" Text="" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Height="27" Width="90"/>
+        <TextBlock HorizontalAlignment="Left" Margin="80,180,0,0" Text="Real" TextWrapping="Wrap"
+                   VerticalAlignment="Top" FontSize="14" RenderTransformOrigin="0.193,4.751"/>
+        <TextBox HorizontalAlignment="Left" Margin="158,150,0,0" Text="" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Height="27" Width="90"/>
+        <TextBlock HorizontalAlignment="Left" Margin="171,178,0,0" Text="Imaginary" TextWrapping="Wrap"
+                   VerticalAlignment="Top" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,382,0,0" Text="Generated in:" TextWrapping="Wrap"
+                   VerticalAlignment="Top" FontSize="18" Height="27" Width="124" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="139,382,0,0" Text="" TextWrapping="Wrap"
+                   VerticalAlignment="Top" FontSize="18" Height="27" Width="48"/>
+        <TextBlock HorizontalAlignment="Left" Margin="192,382,0,0" Text="ms" TextWrapping="Wrap"
+                   VerticalAlignment="Top" FontSize="18" Height="27" Width="48"/>
+        <Image HorizontalAlignment="Left" Height="400" Margin="379,10,0,0" VerticalAlignment="Top" Width="400"/>
+    </Grid>
+</Window>

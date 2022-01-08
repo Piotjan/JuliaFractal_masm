@@ -1,1 +1,0 @@
-D:\Documents\sztudyja\Studies-projects\JuliaFractal_masm\julia_fractal\julia_fractal\julia_fractal.vcxproj;x64

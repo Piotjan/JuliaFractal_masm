@@ -1,3 +1,0 @@
-﻿  ComplexNumbWorker.cpp
-D:\Documents\sztudyja\Studies-projects\JuliaFractal_masm\julia_fractal\julia_fractal\ComplexNumbWorker.cpp(38,1): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
-C:\Program Files (x86)\Windows Kits\10\bin\10.0.19041.0\XamlCompiler\Microsoft.Windows.UI.Xaml.Common.targets(486,5): error MSB4181: The "CompileXaml" task returned false but did not log an error.
