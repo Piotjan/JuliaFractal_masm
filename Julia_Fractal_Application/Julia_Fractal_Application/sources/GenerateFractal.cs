@@ -10,7 +10,7 @@ namespace Julia_Fractal_Application.sources
 {
 	class GenerateFractal
 	{
-		[DllImport("D:/Documents/sztudyja/Studies-projects/JuliaFractal_masm/Julia_Fractal_Application/x64/Debug/CPP.dll")]
+		[DllImport("D:/Documents/sztudyja/Studies-projects/JuliaFractal_masm/Julia_Fractal_Application/x64/Debug/MASM.dll")]
 		private static extern int colorBase(double cReal, double cImg, double X, double Y, double x, double y);
 
 		public static Bitmap run(double cReal, double cImg)
