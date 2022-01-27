@@ -2,7 +2,7 @@
 #include "pch.h"
 #include <complex>
 
-int colorBase(const double cReal, const double cImg, const int X, const int Y, const int x, const int y)
+int colorBase(const double cReal, const double cImg, const double X, const double Y, const double x, const double y)
 {
 	const std::complex<double> c(cReal, cImg);
 	std::complex<double> z(1.5 * (x - X / 2) / (0.5 * X * 0.85),

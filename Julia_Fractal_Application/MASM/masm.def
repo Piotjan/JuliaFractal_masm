@@ -1,2 +1,2 @@
 LIBRARY MASM
-EXPORTS MyProc1
+EXPORTS colorBase

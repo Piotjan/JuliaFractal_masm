@@ -11,13 +11,12 @@
                    TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="331" FontSize="32"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,74,0,0" Text="Choose library:" TextWrapping="Wrap"
                    VerticalAlignment="Top" Height="29" Width="150" FontSize="16"/>
-        <RadioButton Content="MASM" Margin="32,108,705,0" VerticalAlignment="Top"/>
+        <RadioButton Content="MASM" Margin="13,108,705,0" VerticalAlignment="Top"/>
         <RadioButton Content="C++" Margin="92,108,651,0" VerticalAlignment="Top"/>
-        <Slider HorizontalAlignment="Left" Margin="32,259,0,0" VerticalAlignment="Top" Width="216" Minimum="1"/>
+        <Slider HorizontalAlignment="Left" Margin="13,259,0,0" VerticalAlignment="Top" Width="216" Minimum="1"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,225,0,0" Text="Amount of threads:" TextWrapping="Wrap"
                    VerticalAlignment="Top" Height="29" Width="142" FontSize="16"/>
-        <TextBlock HorizontalAlignment="Left" Margin="17,259,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="253,259,0,0" Text="1" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="236,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="6"/><LineBreak/><Run/></TextBlock>
         <Button Content="Generate" Margin="15,316,686,0" VerticalAlignment="Top" Height="39" Width="91"
                 HorizontalAlignment="Center" FontSize="16" RenderTransformOrigin="0.504,1.437" Click="Button_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="17,150,0,0" Text="c = " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
