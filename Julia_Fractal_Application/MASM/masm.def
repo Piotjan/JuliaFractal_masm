@@ -1,2 +1,2 @@
 LIBRARY MASM
-EXPORTS colorBase
+EXPORTS colorBaseAsm

@@ -1,2 +1,2 @@
 LIBRARY CPP
-EXPORTS colorBase
+EXPORTS colorBaseCpp

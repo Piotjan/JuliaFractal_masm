@@ -5,7 +5,7 @@ constDivider REAL8 0.425
 constFour REAL8 4.0
 
 .code
-colorBase proc
+colorBaseAsm proc
 	MOVUPD XMMWORD PTR[rsp-32], xmm7
 	MOVUPD XMMWORD PTR[rsp-16], xmm8
 
@@ -31,7 +31,7 @@ colorBase proc
 		MOVUPD xmm7, XMMWORD PTR[rsp-16]
 		MOVUPD xmm8, XMMWORD PTR[rsp-32]
 		RET
-colorBase endp
+colorBaseAsm endp
 
 declaration proc
 	MOVSD xmm6, constTwo				;sta³e do pamiêci operacyjnej
