@@ -25,14 +25,22 @@ namespace Julia_Fractal_Application
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		int dllParam;
+		int threads;
 		public MainWindow()
 		{
 			InitializeComponent();
+			//threads = Convert.ToInt32(Environment.ProcessorCount.ToString());
+			//ThreadsLabel.Text = Environment.ProcessorCount.ToString();
+			threads = 2;
+
+
 		}
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+		private void Button_Click(object sender, RoutedEventArgs e)
         {
-			Bitmap fractal = GenerateFractal.run(Convert.ToDouble(tbReal.Text), Convert.ToDouble(tbImg.Text));
+			Tuple<Bitmap, double> result = GenerateFractal.run(Convert.ToDouble(tbReal.Text), Convert.ToDouble(tbImg.Text), threads, dllParam);
+			Bitmap fractal = result.Item1;
 			using (MemoryStream memory = new MemoryStream())
 			{
 				fractal.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
@@ -45,6 +53,23 @@ namespace Julia_Fractal_Application
 
 				imFractal.Source = bitmapimage;
 			}
+			RunTimeLabel.Content = result.Item2;
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+			dllParam = 0;
+        }
+
+        private void CppRadio_Checked(object sender, RoutedEventArgs e)
+        {
+			dllParam = 1;
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+			threads = (int)ThreadSlider.Value;
+			//ThreadsLabel.Text = "Threads: ";
         }
     }
 }

@@ -11,12 +11,12 @@
                    TextWrapping="Wrap" VerticalAlignment="Top" Height="47" Width="331" FontSize="32"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,74,0,0" Text="Choose library:" TextWrapping="Wrap"
                    VerticalAlignment="Top" Height="29" Width="150" FontSize="16"/>
-        <RadioButton Content="MASM" Margin="13,108,705,0" VerticalAlignment="Top"/>
-        <RadioButton Content="C++" Margin="92,108,651,0" VerticalAlignment="Top"/>
-        <Slider HorizontalAlignment="Left" Margin="13,259,0,0" VerticalAlignment="Top" Width="216" Minimum="1"/>
+        <RadioButton x:Name="MasmRadio" Content="MASM" Margin="13,108,705,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="CppRadio" Content="C++" Margin="92,108,651,0" VerticalAlignment="Top" Checked="CppRadio_Checked"/>
+        <Slider x:Name="ThreadSlider" HorizontalAlignment="Left" Margin="13,259,0,0" VerticalAlignment="Top" Width="216" Minimum="1" ValueChanged="Slider_ValueChanged"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,225,0,0" Text="Amount of threads:" TextWrapping="Wrap"
                    VerticalAlignment="Top" Height="29" Width="142" FontSize="16"/>
-        <TextBlock HorizontalAlignment="Left" Margin="236,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="6"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="maxThreadsTb" HorizontalAlignment="Left" Margin="236,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="6"/><LineBreak/><Run/></TextBlock>
         <Button Content="Generate" Margin="15,316,686,0" VerticalAlignment="Top" Height="39" Width="91"
                 HorizontalAlignment="Center" FontSize="16" RenderTransformOrigin="0.504,1.437" Click="Button_Click"/>
         <TextBlock HorizontalAlignment="Left" Margin="17,150,0,0" Text="c = " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
@@ -30,10 +30,11 @@
                    VerticalAlignment="Top" FontSize="14"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,382,0,0" Text="Generated in:" TextWrapping="Wrap"
                    VerticalAlignment="Top" FontSize="18" Height="27" Width="124" FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left" Margin="139,382,0,0" Text="" TextWrapping="Wrap"
+        <Label x:Name="RunTimeLabel" HorizontalAlignment="Left" Margin="139,382,0,0" 
                    VerticalAlignment="Top" FontSize="18" Height="27" Width="48"/>
         <TextBlock HorizontalAlignment="Left" Margin="192,382,0,0" Text="ms" TextWrapping="Wrap"
                    VerticalAlignment="Top" FontSize="18" Height="27" Width="48"/>
         <Image x:Name="imFractal" HorizontalAlignment="Left" Height="400" Margin="379,10,0,0" VerticalAlignment="Top" Width="400"/>
+        <TextBlock x:Name="ThreadsLabel" HorizontalAlignment="Left" Margin="103,282,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
