@@ -31,7 +31,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="10,382,0,0" Text="Generated in:" TextWrapping="Wrap"
                    VerticalAlignment="Top" FontSize="18" Height="27" Width="124" FontWeight="Bold"/>
         <Label x:Name="RunTimeLabel" HorizontalAlignment="Left" Margin="139,382,0,0" 
-                   VerticalAlignment="Top" FontSize="18" Height="27" Width="48"/>
+                   VerticalAlignment="Top" FontSize="12" Height="27" Width="48"/>
         <TextBlock HorizontalAlignment="Left" Margin="192,382,0,0" Text="ms" TextWrapping="Wrap"
                    VerticalAlignment="Top" FontSize="18" Height="27" Width="48"/>
         <Image x:Name="imFractal" HorizontalAlignment="Left" Height="400" Margin="379,10,0,0" VerticalAlignment="Top" Width="400"/>

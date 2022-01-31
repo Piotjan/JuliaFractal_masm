@@ -16,7 +16,6 @@ colorBaseAsm proc
 	CALL declaration					;utworzenie i przypisanie Z
 	MOV ecx, 100
 	myLoop:
-		CALL pow
 		CALL loopCondition
 		MOVSD xmm3, constFour
 		SUBPD xmm3, xmm2
@@ -24,6 +23,7 @@ colorBaseAsm proc
 		VMOVMSKPD rax, xmm3
 		SUB rax, 2
 		JZ endLoop
+		CALL pow
 		LOOP myLoop
 	endLoop:
 		MOV eax, 100

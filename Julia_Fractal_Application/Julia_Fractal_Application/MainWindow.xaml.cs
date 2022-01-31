@@ -32,7 +32,7 @@ namespace Julia_Fractal_Application
 			InitializeComponent();
 			//threads = Convert.ToInt32(Environment.ProcessorCount.ToString());
 			//ThreadsLabel.Text = Environment.ProcessorCount.ToString();
-			threads = 2;
+			threads = 4;
 
 
 		}

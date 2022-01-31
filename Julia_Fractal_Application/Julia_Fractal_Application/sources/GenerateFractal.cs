@@ -19,6 +19,7 @@ namespace Julia_Fractal_Application.sources
 				public double Y;
 				public double x;
 				public double y;
+				public double[] colorPixel;
 			}
 
 
@@ -33,7 +34,6 @@ namespace Julia_Fractal_Application.sources
 			const int X = 400;
 			const int Y = 400;
 			Bitmap fractal = new Bitmap(X, Y);
-			var watch = System.Diagnostics.Stopwatch.StartNew();
 			var countdownEvent = new CountdownEvent(X * Y);
 			Action<Object> threadFunctionWrapper = null;
 			if(whichDll==0)
@@ -41,13 +41,35 @@ namespace Julia_Fractal_Application.sources
 				threadFunctionWrapper = threadParams =>
 				{
 					TaskParams castedParams = (TaskParams)threadParams;
-
+					int temp = (int)(castedParams.x * castedParams.Y + castedParams.y);
+					castedParams.colorPixel[temp] = colorBaseAsm(castedParams.cReral,
+																	castedParams.cImg,
+																	castedParams.X,
+																	castedParams.Y,
+																	castedParams.x,
+																	castedParams.y);
 					countdownEvent.Signal();
 				};
             }
 
+			if (whichDll == 1)
+			{
+				threadFunctionWrapper = threadParams =>
+				{
+					TaskParams castedParams = (TaskParams)threadParams;
+					int temp = (int)(castedParams.x * castedParams.Y + castedParams.y);
+					castedParams.colorPixel[temp] = colorBaseCpp(castedParams.cReral,
+																	castedParams.cImg,
+																	castedParams.X,
+																	castedParams.Y,
+																	castedParams.x,
+																	castedParams.y);
+					countdownEvent.Signal();
+				};
+			}
+
 			//if (whichDll==0)
-   //         {
+			//         {
 			//	Parallel.For(0, X, new ParallelOptions { MaxDegreeOfParallelism = 1 }, (x) =>
 			//	{
 			//		for (int y = 0; y < Y; ++y)
@@ -65,7 +87,7 @@ namespace Julia_Fractal_Application.sources
 			//	});
 			//}
 			//else if(whichDll==1)
-   //         {
+			//         {
 			//	Parallel.For(0, X, new ParallelOptions { MaxDegreeOfParallelism = threads }, (x) =>
 			//	{
 			//		for (int y = 0; y < Y; ++y)
@@ -82,7 +104,39 @@ namespace Julia_Fractal_Application.sources
 			//		}
 			//	});
 			//}
+			double[] colorPixel = new double[X * Y];
+			ThreadPool.SetMinThreads(threads, threads);
+			ThreadPool.SetMaxThreads(threads, threads);
+			var watch = System.Diagnostics.Stopwatch.StartNew();
+			for(int x=0;x<X;++x)
+            {
+				for(int y=0;y<Y;++y)
+                {
+					TaskParams taskParams = new TaskParams();
+					taskParams.cReral = cReal;
+					taskParams.cImg = cImg;
+					taskParams.X = X;
+					taskParams.Y = Y;
+					taskParams.x = x;
+					taskParams.y = y;
+					taskParams.colorPixel = colorPixel;
+					ThreadPool.QueueUserWorkItem(new WaitCallback(threadFunctionWrapper), taskParams);
+                }
+            }
+			countdownEvent.Wait();
 			watch.Stop();
+
+			for(int x=0;x<X;++x)
+            {
+				for(int y=0;y<Y;++y)
+                {
+					int temp = (int)(x * Y + y);
+					fractal.SetPixel(x, y, Color.FromArgb(255,
+														(byte)(colorPixel[temp] * 16),
+														(byte)(colorPixel[temp] * 8),
+														(byte)(colorPixel[temp] * 8)));
+				}
+            }
 
 			return new Tuple<Bitmap, double>(fractal, watch.ElapsedMilliseconds);
         }
