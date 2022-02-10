@@ -31,8 +31,8 @@ namespace Julia_Fractal_Application.sources
 
 		public static Tuple<Bitmap, double> run(double cReal, double cImg, int threads, int whichDll)
         {
-			const int X = 400;
-			const int Y = 400;
+			const int X = 1600;
+			const int Y = 1600;
 			Bitmap fractal = new Bitmap(X, Y);
 			var countdownEvent = new CountdownEvent(X * Y);
 			Action<Object> threadFunctionWrapper = null;
@@ -68,42 +68,6 @@ namespace Julia_Fractal_Application.sources
 				};
 			}
 
-			//if (whichDll==0)
-			//         {
-			//	Parallel.For(0, X, new ParallelOptions { MaxDegreeOfParallelism = 1 }, (x) =>
-			//	{
-			//		for (int y = 0; y < Y; ++y)
-			//		{
-			//			int pixelColor = colorBaseAsm(cReal, cImg, X, Y, x, y);
-			//			if (pixelColor == 100)
-			//			{
-			//				fractal.SetPixel(x, y, Color.FromArgb(0, 0, 0));
-			//			}
-			//			else
-			//			{
-			//				fractal.SetPixel(x, y, Color.FromArgb((byte)(pixelColor * 16), (byte)(pixelColor * 8), (byte)(pixelColor * 8)));
-			//			}
-			//		}
-			//	});
-			//}
-			//else if(whichDll==1)
-			//         {
-			//	Parallel.For(0, X, new ParallelOptions { MaxDegreeOfParallelism = threads }, (x) =>
-			//	{
-			//		for (int y = 0; y < Y; ++y)
-			//		{
-			//			int pixelColor = colorBaseCpp(cReal, cImg, X, Y, x, y);
-			//			if (pixelColor == 100)
-			//			{
-			//				fractal.SetPixel(x, y, Color.FromArgb(0, 0, 0));
-			//			}
-			//			else
-			//			{
-			//				fractal.SetPixel(x, y, Color.FromArgb((byte)(pixelColor * 16), (byte)(pixelColor * 8), (byte)(pixelColor * 8)));
-			//			}
-			//		}
-			//	});
-			//}
 			double[] colorPixel = new double[X * Y];
 			ThreadPool.SetMinThreads(threads, threads);
 			ThreadPool.SetMaxThreads(threads, threads);

@@ -5,8 +5,7 @@
 int colorBaseCpp(const double cReal, const double cImg, const double X, const double Y, const double x, const double y)
 {
 	const std::complex<double> c(cReal, cImg);
-	std::complex<double> z(1.5 * (x - X / 2) / (0.5 * X * 0.85),
-		1.0 * (y - Y / 2) / (0.5 * Y * 0.85));
+	std::complex<double> z((x - X / 2) * 3.529411764705 / X, (y - Y / 2) / (0.425 * Y));
 	int i = 0;
 	while (z.real() * z.real() + z.imag() * z.imag() < 4 && i < 100)
 	{

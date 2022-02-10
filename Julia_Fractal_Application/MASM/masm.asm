@@ -16,12 +16,12 @@ colorBaseAsm proc
 	CALL declaration					;utworzenie i przypisanie Z
 	MOV ecx, 100
 	myLoop:
-		CALL loopCondition
+		CALL loopCondition				;wartoœæ bezwzglêdna liczby z
 		MOVSD xmm3, constFour
-		SUBPD xmm3, xmm2
+		SUBPD xmm3, xmm2				;sprawdzenie, czy nie wiêksza od 2 (bez pierwiastka odjête 4)
 		PSLLDQ xmm3, 8
-		VMOVMSKPD rax, xmm3
-		SUB rax, 2
+		VMOVMSKPD rax, xmm3				;wektorowe podliczenie znaków
+		SUB rax, 2						;sprawdzenie, czy wynik wyszed³ ujemny
 		JZ endLoop
 		CALL pow
 		LOOP myLoop
@@ -60,10 +60,10 @@ pow proc
 	MOVHLPS	xmm3, xmm0					;czêœæ urojona Z kopiowana do xmm3
 	MULPD xmm2, xmm4					;przemno¿enie rzeczywistej czêœci razy 2
 	MULPD xmm2, xmm3					;przemno¿enie czêœci rzeczywistej i urojonej
-	VMULPD xmm0, xmm0, xmm0				;
-	HSUBPD xmm0, xmm0					;
-	PSLLDQ xmm2, 8						;
-	VBLENDPD xmm0, xmm2, xmm0, 1		;
+	VMULPD xmm0, xmm0, xmm0				;podniesienie do kwadratu
+	HSUBPD xmm0, xmm0					;dodanie horyzontalne
+	PSLLDQ xmm2, 8
+	VBLENDPD xmm0, xmm2, xmm0, 1		;przeniesienie czêœci urojonej do w³aœciwej liczby
 	VADDPD xmm0, xmm0, xmm1
 	RET
 pow endp

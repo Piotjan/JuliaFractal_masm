@@ -30,31 +30,10 @@ namespace Julia_Fractal_Application
 		public MainWindow()
 		{
 			InitializeComponent();
-			//threads = Convert.ToInt32(Environment.ProcessorCount.ToString());
-			//ThreadsLabel.Text = Environment.ProcessorCount.ToString();
-			threads = 4;
-
-
+			threads = Convert.ToInt32(Environment.ProcessorCount.ToString());
+			ThreadsLabel.Content = "Threads: " + Environment.ProcessorCount.ToString();
+			ThreadSlider.Value = threads;
 		}
-
-		private void Button_Click(object sender, RoutedEventArgs e)
-        {
-			Tuple<Bitmap, double> result = GenerateFractal.run(Convert.ToDouble(tbReal.Text), Convert.ToDouble(tbImg.Text), threads, dllParam);
-			Bitmap fractal = result.Item1;
-			using (MemoryStream memory = new MemoryStream())
-			{
-				fractal.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
-				memory.Position = 0;
-				BitmapImage bitmapimage = new BitmapImage();
-				bitmapimage.BeginInit();
-				bitmapimage.StreamSource = memory;
-				bitmapimage.CacheOption = BitmapCacheOption.OnLoad;
-				bitmapimage.EndInit();
-
-				imFractal.Source = bitmapimage;
-			}
-			RunTimeLabel.Content = result.Item2;
-        }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
@@ -69,7 +48,33 @@ namespace Julia_Fractal_Application
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
 			threads = (int)ThreadSlider.Value;
-			//ThreadsLabel.Text = "Threads: ";
+			ThreadsLabel.Content = "Threads: " + threads;
         }
+
+        private void generateButton_Click(object sender, RoutedEventArgs e)
+        {
+			Tuple<Bitmap, double> result = GenerateFractal.run(Convert.ToDouble(tbReal.Text), Convert.ToDouble(tbImg.Text), threads, dllParam);
+			Bitmap fractal = result.Item1;
+			using (MemoryStream memory = new MemoryStream())
+			{
+				fractal.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
+				memory.Position = 0;
+				BitmapImage bitmapimage = new BitmapImage();
+				bitmapimage.BeginInit();
+				bitmapimage.StreamSource = memory;
+				bitmapimage.CacheOption = BitmapCacheOption.OnLoad;
+				bitmapimage.EndInit();
+
+				imFractal.Source = bitmapimage;
+				string fileName ="..//..//..//..//" + $@"{ Guid.NewGuid()}.png";
+				BitmapEncoder encoder = new PngBitmapEncoder();
+				encoder.Frames.Add(BitmapFrame.Create(bitmapimage));
+				using (var fileStream = new System.IO.FileStream(fileName, System.IO.FileMode.Create))
+                {
+					encoder.Save(fileStream);
+                }
+			}
+			RunTimeLabel.Content = result.Item2;
+		}
     }
 }
