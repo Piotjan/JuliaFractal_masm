@@ -31,8 +31,8 @@ namespace Julia_Fractal_Application.sources
 
 		public static Tuple<Bitmap, double> run(double cReal, double cImg, int threads, int whichDll)
         {
-			const int X = 1600;
-			const int Y = 1600;
+			const int X = 5000;
+			const int Y = 5000;
 			Bitmap fractal = new Bitmap(X, Y);
 			var countdownEvent = new CountdownEvent(X * Y);
 			Action<Object> threadFunctionWrapper = null;
